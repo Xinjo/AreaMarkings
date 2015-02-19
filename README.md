@@ -34,7 +34,7 @@ In order for the plugin to draw areas, it requires points. Just like you would u
 **Default**:  _[]_
 ___
 ### lineColor
-It's possible to give your area a nice border! 
+It's possible to give your area a nice border! The area will only have a border if you set the `lineWidth` to be 1 or higher.
 
 **Value**:  _"red" or "rgba(100, 100, 100, 100)"_  
 **Default**:  _"black"_
