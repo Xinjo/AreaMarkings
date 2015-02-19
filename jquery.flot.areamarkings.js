@@ -1,9 +1,4 @@
-/** AreaMarkings plugin for Flot
- * 
- * 
- * Copyright (c) 2015 Xinjo/Michel de Nijs
- * 
- * Licensed under the MIT license.
+/*
  * 
  * Version v0.0.1
  * 
