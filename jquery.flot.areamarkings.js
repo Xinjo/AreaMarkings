@@ -1,48 +1,49 @@
-/*
- * 
- * Version v0.0.1
- * 
- */
- 
 (function ($) {
-    function init(plot) {		
-		var markings = [];
-		
-		function getConfig(plot, options) {
-			markings = plot.getOptions().grid.areaMarkings;
-		}
-		
-		function drawAreaMarkings(plot, ctx) {	
-			if(markings) {
-				$.each(markings, function(index, element) {
-					if(element) {
-						var tl = plot.pointOffset( { x: element.topLeft[0], y: element.topLeft[1] } );
-						var tr = plot.pointOffset( { x: element.topRight[0], y: element.topRight[1] } );
-						var br = plot.pointOffset( { x: element.bottomRight[0], y: element.bottomRight[1] } );
-						var bl = plot.pointOffset( { x: element.bottomLeft[0], y: element.bottomLeft[1] } );
-						
-						ctx.beginPath();
-						ctx.lineWidth = element.lineWidth;
-						ctx.rect(tl.left, tl.top, tr.left - tl.left, bl.top - tl.top);
-						ctx.fillStyle = element.fillColor;
-						ctx.fill();
-						ctx.strokeStyle = element.lineColor;
-						ctx.stroke();
-					}
-				});
-			}
-		}
-		
-		plot.hooks.processOptions.push(getConfig);
-		plot.hooks.drawBackground.push(drawAreaMarkings)
+    function init(plot) {
+        function drawAreaMarkings(plot, ctx) {
+            var markings = plot.getOptions().grid.areaMarkings;
+            if (markings) {
+                $.each(markings, function (iM, eM) {
+                    if (eM) {
+                        var points = eM.points == null ? [] : eM.points;
+
+                        var lw = eM.lineWidth == null ? 1 : eM.lineWidth;
+                        var lc = eM.lineColor == null ? "black" : eM.lineColor;
+                        var fc = eM.fillColor == null ? "black" : eM.fillColor;
+
+                        ctx.beginPath();
+
+                        $.each(points, function (iP, eP) {
+                            var offset = plot.pointOffset({
+                                x: eP[0],
+                                y: eP[1]
+                            });
+
+                            ctx.lineTo(offset.left, offset.top);
+                        });
+
+                        ctx.closePath();
+                        ctx.lineWidth = lw;
+                        ctx.fillStyle = fc;
+                        ctx.fill();
+                        if (lw > 0) {
+                            ctx.strokeStyle = lc;
+                            ctx.stroke();
+                        }
+                    }
+                });
+            }
+        }
+
+        plot.hooks.drawBackground.push(drawAreaMarkings)
     }
-	
-	var options = { };
+
+    var options = {};
 
     $.plot.plugins.push({
         init: init,
         options: options,
         name: "AreaMarkings",
-        version: "0.0.1"
+        version: "0.0.2"
     });
 })(jQuery);
