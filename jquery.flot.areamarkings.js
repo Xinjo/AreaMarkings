@@ -1,5 +1,5 @@
 /** AreaMarkings plugin for Flot
- * https://github.com/kcdr/flot-autoMarkings/edit/master/README.md
+ * 
  * 
  * Copyright (c) 2015 Xinjo/Michel de Nijs
  * 
