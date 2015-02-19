@@ -31,7 +31,7 @@ ___
 In order for the plugin to draw areas, it requires points. Just like you would use in your data series, the plugin draws from one coordinate to the next. If no points are specified, the plugin will fallback on it's default values.
 
 **Value**:  _[[x, y], [x, y]]_  
-**Default**:  _[[0, 0]]_
+**Default**:  _[]_
 ___
 ### lineColor
 It's possible to give your area a nice border! 
