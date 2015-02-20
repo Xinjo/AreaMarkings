@@ -1,8 +1,8 @@
 /*
- * Name: AreaMarkings
- * Author(s): Xinjo/Michel de Nijs
- * Version:	0.0.2
- * Description:	A plugin for Flot to create markings of all kinds of shapes easily.
+ * Name:        AreaMarkings
+ * Author(s):   Xinjo/Michel de Nijs
+ * Version:     0.0.2
+ * Description: A plugin for Flot to create markings of all kinds of shapes easily.
  * 
  */
 
