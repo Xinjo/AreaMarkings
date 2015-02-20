@@ -2,7 +2,7 @@
 Flot plugin to easily generate all kinds of oddly (or square) shaped markings on the background of the chart.
 
 ## Installation
-Either copy paste the content of `![jquery.flot.areamarkings.js](https://raw.githubusercontent.com/Xinjo/AreaMarkings/master/jquery.flot.areamarkings.js)` to a new file or ![download the file](https://github.com/Xinjo/AreaMarkings/archive/master.zip). Just add it to your `<script ...></script>` tags and make sure it loads _AFTER_ `jquery.js` and `jquery.flot.js`.  
+Either copy paste the ![content](https://raw.githubusercontent.com/Xinjo/AreaMarkings/master/jquery.flot.areamarkings.js) of `jquery.flot.areamarkings.js` to a new file or ![download the file](https://github.com/Xinjo/AreaMarkings/archive/master.zip). Just add it to your `<script ...></script>` tags and make sure it loads _AFTER_ `jquery.js` and `jquery.flot.js`.  
 Like this:
 ```
 <script type="text/javascript" src="../path/to/jquery.js"></script>
