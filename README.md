@@ -41,13 +41,14 @@ It's possible to give your area a nice border! The area will only have a border 
 **Default**:  _"black"_
 ___
 ### fillColor
+You could also fill in the area using the same methods as `lineColor`, aslong as you provide it as a string object.
 
 **Value**: _[string]_  
 **Example**:  _fillColor: "blue" or "rgba(50, 150, 75, 30)" or "transparent"_  
 **Default**:  _"black"_
 ___
 ### lineWidth
-
+The `lineWidth` property simply displays the thickness of the border of the area. if you set the value to ´0´ and you also specified a `lineColor`, there will be no border.
 
 **Value**:  _[number]_  
 **Example**: _lineWidth: 2_  
