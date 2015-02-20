@@ -23,6 +23,8 @@ grid: {
 	}
 ```
 
+![Example with 2 areas](http://imgur.com/0eSugwx.png "Example with 2 areas")
+
 ## Documentation
 So far the plugin _only_ supports 4 different options, but I'll definitely add more in the future!  
 ___
