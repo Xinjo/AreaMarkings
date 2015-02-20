@@ -50,7 +50,7 @@ You could also fill in the area using the same methods as `lineColor`, aslong as
 **Default**:  _"black"_
 ___
 ### lineWidth
-The `lineWidth` property simply displays the thickness of the border of the area. if you set the value to ´0´ and you also specified a `lineColor`, there will be no border.
+The `lineWidth` property simply displays the thickness of the border of the area. if you set the value to 0 and you also specified a `lineColor`, there will be no border.
 
 **Value**:  _[number]_  
 **Example**: _lineWidth: 2_  
