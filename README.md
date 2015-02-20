@@ -48,14 +48,14 @@ ___
 It's possible to give your area a nice border! The area will only have a border if you set the `lineWidth` to be 1 or higher.
 
 **Value**: _[string]_  
-**Example**:  _lineColor: "red" or "rgba(100, 100, 100, 100)" or "transparent"_  
+**Example**:  _lineColor: "red"_ or _"rgba(100, 100, 100, 100)"_ or _"transparent"_  
 **Default**:  _"black"_
 ___
 ### fillColor
 You could also fill in the area using the same methods as `lineColor`, aslong as you provide it as a string object.
 
 **Value**: _[string]_  
-**Example**:  _fillColor: "blue" or "rgba(50, 150, 75, 30)" or "transparent"_  
+**Example**:  _fillColor: "blue"_ or _"rgba(50, 150, 75, 30)"_ or _"transparent"_  
 **Default**:  _"black"_
 ___
 ### lineWidth
