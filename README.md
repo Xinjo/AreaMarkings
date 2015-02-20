@@ -1,6 +1,15 @@
 # AreaMarkings
 Flot plugin to easily generate all kinds of oddly (or square) shaped markings on the background of the chart.
 
+## Installation
+Either copy paste the content of `jquery.flot.areamarkings.js` to a new file or ![download the file](https://github.com/Xinjo/AreaMarkings/archive/master.zip). Just add it to your `<script ...></script>` tags and make sure it loads _AFTER_ `jquery.js` and `jquery.flot.js`.  
+Like this:
+```
+<script type="text/javascript" src="../path/to/jquery.js"></script>
+<script type="text/javascript" src="../path/to/jquery.flot.js"></script>
+<script type="text/javascript" src="../path/to/jquery.flot.areamarkings.js"></script>
+```
+
 ## Usage
 In order for this plugin to function properly, all you have to do is add the `areaMarkings` to the `grid` object. It is possible to draw more than 1 area, all you have to do is add another object to the array!
 
