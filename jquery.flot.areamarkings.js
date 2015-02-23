@@ -1,17 +1,20 @@
 /*
  * Name:		AreaMarkings
  * Author(s):		Xinjo/Michel de Nijs
- * Version:		0.0.3
+ * Version:		0.0.4
  * Description:		A plugin for Flot to create markings of all kinds of shapes easily.
  */
  
 (function ($) {
     function init(plot) {		
-		function drawAreaMarkings(plot, ctx) {	
+		function drawAreaMarkings(plot, ctx) {			
 			var markings = plot.getOptions().grid.areaMarkings;		
 			var data = plot.getData();
-			if(markings) {
-				$.each(markings, function(iM, eM) {					
+			var axes = plot.getAxes();
+			//console.log(axes);
+			
+			if(markings) {			
+				$.each(markings, function(iM, eM) {							
 					if(eM) {
 						var points = eM.points == null ? null : eM.points;
 						var lw = eM.lineWidth == null ? 1 : eM.lineWidth;
@@ -24,7 +27,12 @@
 						
 							if(points && points.length > 0) {
 								$.each(points, function(iP, eP) {
-									var offset = plot.pointOffset( { x: eP[0], y: eP[1] } );
+									if(eP[0] === "min") { eP[0] = axes.xaxis.min; }	
+									if(eP[0] === "max") { eP[0] = axes.xaxis.max; }
+									if(eP[1] === "min") { eP[1] = axes.yaxis.min; }
+									if(eP[1] === "max") { eP[1] = axes.yaxis.max; }
+									
+ 									var offset = plot.pointOffset( { x: eP[0], y: eP[1] } );
 									
 									ctx.lineTo(offset.left, offset.top);						
 								});								
@@ -72,6 +80,6 @@
         init: init,
         options: options,
         name: "AreaMarkings",
-        version: "0.0.3"
+        version: "0.0.4"
     });
 })(jQuery);
