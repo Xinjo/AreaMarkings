@@ -11,7 +11,6 @@
 			var markings = plot.getOptions().grid.areaMarkings;		
 			var data = plot.getData();
 			var axes = plot.getAxes();
-			//console.log(axes);
 			
 			if(markings) {			
 				$.each(markings, function(iM, eM) {							
