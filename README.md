@@ -40,7 +40,7 @@ ___
 ### points
 In order for the plugin to draw areas, it requires points. Just like you would use in your data series, the plugin draws from one coordinate to the next. If no points are specified, the plugin will fallback on it's default values. It also supports providing **"min"** or **"max"**, this will get the _min_ and _max_ value of the _Y_ and _X_ axis.
 
-**Value**: _[[number, number], [number, number]]_ or _[[string, number], [number, string]_ 
+**Value**: _[[number, number], [number, number]]_ or _[[string, number], [number, string]_  
 **Example**:  _points: [[1, 1], [1, 2], [2, 2], [2, 1]]_  or _[[0, 10], ["min", "max"]]_  
 **Default**:  _null_
 ___
