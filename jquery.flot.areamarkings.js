@@ -65,21 +65,22 @@
 								
 								switch(style) {
 									case "left":
-										gradient = ctx.createLinearGradient(plotOffset.bottom, plotOffset.left / 2, plot.height(), plotOffset.right /2);
+										gradient = ctx.createLinearGradient(plotOffset.bottom, 0, plot.width() - plotOffset.right, 0);
 										break;
 									case "top":
-										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+										colors.reverse();
+										gradient = ctx.createLinearGradient(0, plot.height() + plotOffset.top + plotOffset.bottom, 0, 0);
 										break;
 									case "right":
 										colors.reverse();
-										gradient = ctx.createLinearGradient(plotOffset.bottom, plotOffset.left / 2, plot.height(), plotOffset.right /2);
+										gradient = ctx.createLinearGradient(plotOffset.bottom, 0, plot.width() - plotOffset.left, 0);
 										break;
-									case "bottom":
-										colors.reverse();
-										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+									case "bottom":										
+										gradient = ctx.createLinearGradient(0, plot.height() + plotOffset.top + plotOffset.bottom, 0, 0);
 										break;
 									default:
-										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+										colors.reverse();
+										gradient = ctx.createLinearGradient(0, plot.height() + plotOffset.top + plotOffset.bottom, 0, 0);
 										break;
 								}
 								
