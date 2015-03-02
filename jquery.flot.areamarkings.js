@@ -84,7 +84,7 @@
 										break;
 								}
 								
-								for(var i = 0), l = colors.length; i < l; i++) {
+								for(var i = 0, l = colors.length; i < l; i++) {
 									var c = colors[i];
 									gradient.addColorStop(i / (l - 1), c);
 								}
