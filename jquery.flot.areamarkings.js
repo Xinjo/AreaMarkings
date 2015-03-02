@@ -71,9 +71,11 @@
 										gradient = ctx.createLinearGradient(0, 0, 0, 0);
 										break;
 									case "right":
+										colors.reverse();
 										gradient = ctx.createLinearGradient(plotOffset.bottom, plotOffset.left / 2, plot.height(), plotOffset.right /2);
 										break;
 									case "bottom":
+										colors.reverse();
 										gradient = ctx.createLinearGradient(0, 0, 0, 0);
 										break;
 									default:
