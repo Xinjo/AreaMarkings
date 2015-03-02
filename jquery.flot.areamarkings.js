@@ -1,7 +1,7 @@
 /*
  * Name:		AreaMarkings
  * Author(s):		Xinjo/Michel de Nijs
- * Version:		0.0.4
+ * Version:		0.0.5
  * Description:		A plugin for Flot to create markings of all kinds of shapes easily.
  */
  
@@ -11,6 +11,7 @@
 			var markings = plot.getOptions().grid.areaMarkings;		
 			var data = plot.getData();
 			var axes = plot.getAxes();
+			var plotOffset = plot.getPlotOffset();
 			
 			if(markings) {			
 				$.each(markings, function(iM, eM) {							
@@ -20,6 +21,7 @@
 						var lc = eM.lineColor == null ? "black" : eM.lineColor;
 						var fc = eM.fillColor == null ? "black" : eM.fillColor;
 						var bs = eM.betweenSeries == null ? null : eM.betweenSeries;
+						var fg = eM.fillGradient == null ? null : eM.fillGradient;
 						
 						if(points || bs) {
 							ctx.beginPath();
@@ -53,6 +55,38 @@
 									
 									ctx.lineTo(offset.left, offset.top);
 								});
+							}
+							
+							if(fg) {
+								var colors = fg.colors;
+								var style = fg.style;
+								
+								var gradient = null;
+								
+								switch(style) {
+									case "left":
+										gradient = ctx.createLinearGradient(plotOffset.bottom, plotOffset.left / 2, plot.height(), plotOffset.right /2);
+										break;
+									case "top":
+										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+										break;
+									case "right":
+										gradient = ctx.createLinearGradient(plotOffset.bottom, plotOffset.left / 2, plot.height(), plotOffset.right /2);
+										break;
+									case "bottom":
+										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+										break;
+									default:
+										gradient = ctx.createLinearGradient(0, 0, 0, 0);
+										break;
+								}
+								
+								for(var i = 0), l = colors.length; i < l; i++) {
+									var c = colors[i];
+									gradient.addColorStop(i / (l - 1), c);
+								}
+								
+								fc = gradient;
 							}
 							
 							ctx.lineWidth = lw;						
