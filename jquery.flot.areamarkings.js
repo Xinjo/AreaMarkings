@@ -113,6 +113,6 @@
         init: init,
         options: options,
         name: "AreaMarkings",
-        version: "0.0.4"
+        version: "0.0.5"
     });
 })(jQuery);
