@@ -6,7 +6,7 @@
  */
  
 (function ($) {
-    function init(plot) {		
+        function init(plot) {		
 		function drawAreaMarkings(plot, ctx) {			
 			var markings = plot.getOptions().grid.areaMarkings;		
 			var data = plot.getData();
@@ -16,18 +16,18 @@
 			if(markings) {			
 				$.each(markings, function(iM, eM) {							
 					if(eM) {
-						var points = eM.points == null ? null : eM.points;
+						var p = eM.points == null ? null : eM.points;
 						var lw = eM.lineWidth == null ? 1 : eM.lineWidth;
 						var lc = eM.lineColor == null ? "black" : eM.lineColor;
 						var fc = eM.fillColor == null ? "black" : eM.fillColor;
 						var bs = eM.betweenSeries == null ? null : eM.betweenSeries;
 						var fg = eM.fillGradient == null ? null : eM.fillGradient;
 						
-						if(points || bs) {
+						if(p || bs) {
 							ctx.beginPath();
 						
-							if(points && points.length > 0) {
-								$.each(points, function(iP, eP) {
+							if(p && p.length > 0) {
+								$.each(p, function(iP, eP) {
 									if(eP[0] === "min") { eP[0] = axes.xaxis.min; }	
 									if(eP[0] === "max") { eP[0] = axes.xaxis.max; }
 									if(eP[1] === "min") { eP[1] = axes.yaxis.min; }
@@ -108,14 +108,14 @@
 		}
 		
 		plot.hooks.drawBackground.push(drawAreaMarkings)
-    }
+    	}
 	
 	var options = { };
 
-    $.plot.plugins.push({
-        init: init,
-        options: options,
-        name: "AreaMarkings",
-        version: "0.0.5"
-    });
+    	$.plot.plugins.push({
+        	init: init,
+        	options: options,
+        	name: "AreaMarkings",
+        	version: "0.0.5"
+    	});
 })(jQuery);
