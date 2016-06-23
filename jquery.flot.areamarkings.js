@@ -17,6 +17,7 @@
 			if(markings) {			
 				$.each(markings, function(iM, eM) {							
 					if(eM) {
+						// apply default values if nothing if none are provided
 						var p = eM.points == null ? null : eM.points;
 						var lw = eM.lineWidth == null ? 1 : eM.lineWidth;
 						var lc = eM.lineColor == null ? "black" : eM.lineColor;
@@ -29,6 +30,7 @@
 						
 							if(p && p.length > 0) {
 								$.each(p, function(iP, eP) {
+									// translate 'min/max' to actual min/max values
 									if(eP[0] === "min") { eP[0] = axes.xaxis.min; }	
 									if(eP[0] === "max") { eP[0] = axes.xaxis.max; }
 									if(eP[1] === "min") { eP[1] = axes.yaxis.min; }
